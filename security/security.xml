@@ -1,0 +1,33 @@
+<odoo>
+    <record id="paint_category" model="ir.module.category">
+        <field name="name">Paint works</field>
+    </record>
+
+    <record id="paint_user_group" model="res.groups">
+        <field name="name">Paint User</field>
+        <field name="category_id" ref="paint_works.paint_category"/>
+    </record>
+
+    <record id="paint_admin_group" model="res.groups">
+        <field name="name">Paint Manger</field>
+        <field name="category_id" ref="paint_works.paint_category"/>
+        <field name="implied_ids" eval="[(4, ref('paint_works.paint_user_group'))]"/>
+    </record>
+
+<!-- See Own Records for group Paint User -->
+    <record id="see_own_record" model="ir.rule">
+        <field name="name">See Assigned walls only</field>
+        <field name="model_id" ref="model_wall_wall"/>
+        <field name="domain_force">[('assigned_painter','=', user.id)]</field>
+        <field name="groups" eval="[(4,ref('paint_works.paint_user_group'))]"/>
+    </record>
+
+    <!-- See All Walls for group Paint Manger-->
+    <record id="see_all_walls" model="ir.rule">
+        <field name="name">See All Walls</field>
+        <field name="model_id" ref="model_wall_wall"/>
+        <field name="domain_force">[(1,'=', 1)]</field>
+        <field name="groups" eval="[(4,ref('paint_works.paint_admin_group'))]"/>
+    </record>
+
+</odoo>

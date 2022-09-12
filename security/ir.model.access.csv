@@ -1,11 +1,11 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-paint_works_painter_house_access,paint_works_painter_house_access,model_paint_house,paint_work_painter_group,1,0,0,0
-paint_works_painter_room_access,paint_works_painter_room_access,model_paint_room,paint_work_painter_group,1,0,0,0
-paint_works_painter_wall_access,paint_works_painter_wall_access,model_paint_wall,paint_work_painter_group,1,0,0,0
-paint_works_painter_color_access,paint_works_painter_color_access,model_paint_color,paint_work_painter_group,1,0,0,0
-paint_works_manager_house_access,paint_works_manager_house_access,model_paint_house,paint_work_manager_group,1,1,1,1
-paint_works_manager_room_access,paint_works_manager_room_access,model_paint_room,paint_work_manager_group,1,1,1,1
-paint_works_manager_wall_access,paint_works_manager_wall_access,model_paint_wall,paint_work_manager_group,1,1,1,1
-paint_works_manager_color_access,paint_works_manager_color_access,model_paint_color,paint_work_manager_group,1,1,1,1
+access_house_house_manager,access.house.house.manager,model_house_house,paint_admin_group,1,1,1,1
+access_room_room_manager,access.room.room.manager,model_room_room,paint_admin_group,1,1,1,1
+access_wall_wall_manager,access.wall.wall.manager,model_wall_wall,paint_admin_group,1,1,1,1
+access_color_color_manager,access.color.color.manager,model_color_color,paint_admin_group,1,1,1,1
 
 
+access_house_house_user,access.house.house.user,model_house_house,paint_user_group,1,0,0,0
+access_room_room_user,access.room.room.user,model_room_room,paint_user_group,1,0,0,0
+access_wall_wall_user,access.wall.wall.user,model_wall_wall,paint_user_group,1,0,0,0
+access_color_color_user,access.color.color.user,model_color_color,paint_user_group,1,0,0,0
