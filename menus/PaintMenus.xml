@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Paint Works" id="paint_works_root_menu"/>
+        <menuitem name="Paint House" id="ModelName_menu" parent="paint_works_root_menu" action="PaintHouse_act_window"/>
+        <menuitem name="Paint Room" id="HouseRoom_menu" parent="paint_works_root_menu" action="PaintRoom_act_window"/>
+
+    </data>
+</odoo>

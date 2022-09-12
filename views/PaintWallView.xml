@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="paint_wall_form_view" model="ir.ui.view">
+            <field name="name">paint_works.paint_wall.form</field>
+            <field name="model">paint.wall</field>
+            <field name="arch" type="xml">
+                <form string="Paint Wall">
+                    <sheet>
+
+                        <group>
+                                <field name="assigned_painter"/>
+                                <field name="length"/>
+                                <field name="width"/>
+                                <field name="area"/>
+                                <field name="room_id"/>
+                                <field name="color_id"/>
+                                                                                                    <field name="unit_cost"/>
+
+                                <field name="total_cost"/>
+
+
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="paint_wall_tree_view" model="ir.ui.view">
+            <field name="name">ProjectName.paint_wall.tree</field>
+            <field name="model">paint.wall</field>
+            <field name="arch" type="xml">
+                <tree string="Paint Wall">
+                 <field name="assigned_painter"/>
+                                <field name="length"/>
+                                <field name="width"/>
+                                <field name="area"/>
+                                <field name="room_id"/>
+                                <field name="color_id"/>
+                                                                        <field name="unit_cost"/>
+
+
+                                                    <field name="total_cost"/>
+
+
+                </tree>
+            </field>
+        </record>
+
+\
+
+        <record id="paint_wall_act_window" model="ir.actions.act_window">
+            <field name="name">Paint Wall</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">paint.wall</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Wall click here to add new Wall.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Paint Wall" id="paint_wall_menu" parent="paint_works_root_menu" action="paint_wall_act_window"/>
+
+    </data>
+</odoo>
+
+        <!--assigned_painter = fields.Many2one("res.users", string='Assigned Painter')-->
+        <!--    length = fields.Float(string='Wall Length')-->
+        <!--    width = fields.Float(string='Wall Width')-->
+        <!--    area = fields.Float(computed='_calArea', store=True)-->
+        <!--    room_id = fields.Many2one('paint.room', string='room')-->
+        <!--    # total_cost = fields.Float(string='Total Cost $', computed='_cal_total_cost')-->
+        <!--    color_id = fields.Many2one('paint.color')-->

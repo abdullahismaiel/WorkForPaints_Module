@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+                <record id="PaintHouse_sequence" model="ir.sequence">
+                    <field name="name">House Sequence</field>
+                    <field name="code">house.seq</field>
+                    <field name="prefix"/>
+                    <field name="padding">2</field>
+                    <field name="number_increment">10</field>
+                    <field name="number_next">10</field>
+                </record>
+           <record id="PaintRoom_sequence" model="ir.sequence">
+                    <field name="name">Room Sequence</field>
+                    <field name="code">room.seq</field>
+                    <field name="prefix"/>
+                    <field name="padding">2</field>
+                    <field name="number_increment">5</field>
+                    <field name="number_next">10</field>
+                </record>
+    </data>
+</odoo>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="PaintRoom_form_view" model="ir.ui.view">
+            <field name="name">PaintRoom.form</field>
+            <field name="model">paint.room</field>
+            <field name="arch" type="xml">
+                <form string="Paint Room">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="ref"/>
+                            <h1>
+                                <field name="ref"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="house_id"/>
+                            <field name="num_of_walls"/>
+                            <field name="name"/>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="PaintRoom_tree_view" model="ir.ui.view">
+        <field name="name">PaintRoom.tree</field>
+            <field name="model">paint.room</field>
+            <field name="arch" type="xml">
+                <tree string="ModelTitle">
+                    <field name="house_id"/>
+                    <field name="num_of_walls"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="PaintRoom_act_window" model="ir.actions.act_window">
+            <field name="name">Paint Room</field>
+            <field name="res_model">paint.room</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no Room click here to add new Room.
+                </p>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
+
+        <!--  house_id = fields.Many2one('paint.house')-->
+        <!--    num_of_walls = fields.Integer(string='Number Of Walls')-->
+        <!--    total_area_of_walls = fields.Float(computed='_cal_total_area', store=True)-->
+        <!--    # walls_ids = fields.One2many('paint.wall', 'room_id', string='Walls')-->
+        <!--    name = fields.Char()-->
+        <!--    ref = fields.Char('House Sequence', readonly=True, required=True, default=lambda self: _('New'), store=True)-->
+        <!--    total_cost = fields.Float(string='Total Cost Of Room', computed='_cal_total_cost')-->

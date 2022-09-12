@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="house_form_view" model="ir.ui.view">
+            <field name="name">house.form.view</field>
+            <field name="model">paint.house</field>
+            <field name="arch" type="xml">
+                <form string="Paint House">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="ref"/>
+                            <h1>
+                                <field name="ref"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <field name="name"/>
+                            <field name="house_Owner"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="paint_house_tree_view" model="ir.ui.view">
+            <field name="name">paint.house.tree_view</field>
+            <field name="model">paint.house</field>
+            <field name="arch" type="xml">
+                <tree string="Paint House" default_order="create_date">
+                    <field name="ref" string="House Name"/>
+                    <field name="create_date" context="{'group_by':'create_date:day'}"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="PaintHouse_act_window" model="ir.actions.act_window">
+            <field name="name">Paint House</field>
+            <field name="res_model">paint.house</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    There is no House click here to add new House.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>
